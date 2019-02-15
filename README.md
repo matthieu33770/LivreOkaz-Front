@@ -8,7 +8,7 @@ Pour ce faire, nous avons généré un projet Angular. A l'intérieur de celui-c
 
 Nous avons utilisé Material d'Angular pour aider à la mise en forme des templates. Les templates communiquent avec les composants via les string interpolations et les two-way binding [(ngModel)].
 
-Sur la liste des ourvrages, nous avons utilisé une boucle ngFor dans le template pour afficher l'ensembles des ouvrages.
+Sur la liste des ourvrages, nous avons utilisé une boucle ngFor dans le template pour afficher l'ensembles des ouvrages. La boucle ngIf nous sert à afficher une image "bateau" si l'image n'est pas présente dans la base de donnée.
 
 L'ensemble des composants sont reliés par le module app-routing où sont déclarés les différentes routes internes en Angular.
 
