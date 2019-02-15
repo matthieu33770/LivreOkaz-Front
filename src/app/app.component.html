@@ -1,0 +1,47 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>{{title}}</title>
+  </head>
+ 
+ <body>
+  <header class="test">
+      <div class="log">
+        <img class="img-responsiveSimplon" src="assets/logo_simplon_simple_red1.png" routerLink="">
+      </div>
+      <div class="title">
+        <h1>
+        Bienvenue sur {{ title }} !
+        </h1>
+      </div>
+      <div class="log">
+        <img class="img-responsive" src="assets/SMS_Logo.jpg">
+      </div>
+    </header>
+
+  <!-- Menu de l'application -->
+
+  <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <mat-icon>home</mat-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/homebook/allbooks">Liste des Livres</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="/homebook/createbook">Ajouter un Livre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/gestionnaire">Gérer</a>
+    </li>
+    </ul>
+
+<router-outlet></router-outlet>
+</body>

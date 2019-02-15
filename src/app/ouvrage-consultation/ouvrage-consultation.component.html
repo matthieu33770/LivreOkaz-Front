@@ -1,0 +1,22 @@
+<h1 class="livre">Détail de l'ouvrage : <strong>{{ detailedBook.titre }}</strong></h1>
+<div class="top">
+    <mat-card class="card">
+        <!-- <mat-card-header>
+          <mat-card-title><strong>{{ detailedBook.titre }}</strong></mat-card-title>
+        </mat-card-header> -->
+        <div class="noimage" *ngIf="!detailedBook.imagecouv ; else Image"><img mat-card-image src="assets/Livres/NoImage.jpg">
+        </div>
+        <ng-template #Image ><img mat-card-image class="image" src="{{ detailedBook.imagecouv }}" alt="Illustration de la couverture"></ng-template>
+        <mat-card-content>
+          <p><strong>ISBN</strong> : {{ detailedBook.isbn }}</p>
+          <p><strong>Sujet</strong> : {{ detailedBook.sujet }}</p>
+          <p><strong>Etat</strong> : {{ detailedBook.description }} - <strong>Langue</strong> : {{ detailedBook.langue }}</p>
+          <p><strong>Année de Parution</strong> : {{ detailedBook.anneeParution }} - <strong>Quantité</strong> : {{ detailedBook.quantiteStock }}</p>
+          <p><strong>Prix Neuf</strong> : {{ detailedBook.prixNeuf }} - <strong>Prix d'occasion</strong> : {{ detailedBook.prixVente }} </p>
+          <p>{{ detailedBook.auteur }} - {{ detailedBook.editeur }} - {{ detailedBook.genre }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><a href="/homebook/allbooks">Retour</a></button>
+        </mat-card-actions>
+      </mat-card>
+  </div>

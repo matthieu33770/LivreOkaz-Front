@@ -1,0 +1,45 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.edition{
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  width: 40%;
+  margin-left: 30px;
+  background-color: rgb(185, 187, 183);
+}
+
+.right {
+  margin-left: 30px;
+  width: 40%;
+  /* height: 600px; */
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  margin-left: 1px;
+  margin-right: 1px;
+  max-width: 350px;
+  max-height: 600px;
+  border-radius: 3px;
+  background: rgb(185, 187, 183);
+  border-style: groove;
+  border-color: black;
+  border-width: 2px;
+}
+
+.image {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25%;
+  max-width: 50%;
+  max-height: 50%;
+}

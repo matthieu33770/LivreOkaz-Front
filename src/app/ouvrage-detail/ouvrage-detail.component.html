@@ -1,0 +1,80 @@
+<h1>Edition de l'ouvrage : <strong>{{ editedBook.titre }}</strong></h1>
+<div class="edition">
+<div class="left">
+  <!-- <div class="form mat-elevation-z8"> -->
+  <mat-form-field>
+      <input matInput placeholder="Titre" [(ngModel)]="editedBook.titre" name="titre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="isbn" [(ngModel)]="editedBook.isbn" name="isbn">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="imagecouv" [(ngModel)]="editedBook.imagecouv" name="imagecouv">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="sujet" [(ngModel)]="editedBook.sujet" name="sujet">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="description" [(ngModel)]="editedBook.description" name="description">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="langue" [(ngModel)]="editedBook.langue" name="langue">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="anneeParution" [(ngModel)]="editedBook.anneeParution" name="anneeParution">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="quantiteStock" [(ngModel)]="editedBook.quantiteStock" name="quantiteStock">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="prixNeuf" [(ngModel)]="editedBook.prixNeuf" name="prixNeuf">
+  </mat-form-field>
+  <mat-form-field>
+    <label for="prixVente">Prix de Vente du Livre :</label>
+    <input matInput placeholder="prixVente" [(ngModel)]="editedBook.prixVente" name="prixVente">
+  </mat-form-field>
+  <!-- <div class="form-control">
+    <label for="auteur">Auteur :</label>
+    <input type="text" id="auteur" [(ngModel)]="editedBook.auteur.name" name="auteur">
+  </div> -->
+<mat-form-field>
+  <mat-select placeholder="Editeur" [(ngModel)]="editedBook.editeur" name="editeur">
+    <mat-option *ngFor="let editeur of editeurList" [value]="editeur">{{ editeur.nomEditeur }}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select placeholder="Genre" [(ngModel)]="editedBook.genre" name="genre">
+      <mat-option *ngFor="let genre of genreList" [value]="genre">{{ genre.typeGenre }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="right">
+  <mat-card class="card">
+      <mat-card-header>
+        <div mat-card-avatar>{{ editedBook.idOuvrage }}</div>
+        <mat-card-title><strong>{{ editedBook.titre }}</strong></mat-card-title>
+        <mat-card-subtitle>{{ editedBook.isbn }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="image" src="{{ editedBook.imagecouv }}" alt="Illustration de la couverture">
+      <mat-card-content>
+        <p>
+            {{ editedBook.sujet }}
+        </p>
+        <p>{{ editedBook.description }} - {{ editedBook.langue }} - {{ editedBook.anneeParution }}</p>
+        <p>{{ editedBook.auteur }} - {{ editedBook.editeur }} - {{ editedBook.genre }}</p>
+        <p>{{ editedBook.prixNeuf }} - {{ editedBook.prixVente }} - {{ editedBook.quantiteStock }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" (click)="onSave()">Enregistrer</button>
+          <button mat-button><a href="/homebook/allbooks">Retour</a></button>
+          <span *ngIf="confirmDelete">
+              <span>Etes vous sûr de vouloir supprimer cet ouvrage ?</span>
+              <button mat-raised-button color="warn" (click)="deleteOuvrage(editedBook)">Oui</button>
+              <button mat-raised-button color="primary" (click)="confirmDelete=false">Non</button>
+            </span>  
+            <button *ngIf="!confirmDelete" mat-raised-button color="warn" (click)="confirmDelete=true">Supression</button>
+        </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

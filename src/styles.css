@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+}
+
+.pad, mat-sidenav {
+  padding: 15px;
+}
+
+button {
+  margin: 5px 4px !important;
+}
+
+a {
+  text-decoration:none;
+  color: white;
+}
+
+a:hover {
+  color: pink;
+}
+
+.mat-list-item-content {
+  padding: 0px !important;
+}
+
+.container {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.right {
+  display: flex !important;
+  justify-content: flex-end;
+}
+
+.center {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.majuscule {
+  text-transform: uppercase;
+}
+

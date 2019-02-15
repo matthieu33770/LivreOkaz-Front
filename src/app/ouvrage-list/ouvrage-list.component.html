@@ -1,0 +1,19 @@
+
+<div class="top">
+  <mat-card class="card" *ngFor="let ouvrage of ouvrageList | async">
+      <mat-card-header>
+        <mat-card-title><strong>{{ ouvrage.titre }}</strong></mat-card-title>
+      </mat-card-header>
+      <div class="noimage" *ngIf="!ouvrage.imagecouv ; else Image"><img mat-card-image src="assets/Livres/NoImage.jpg">
+      </div>
+      <ng-template #Image ><img mat-card-image class="image" src="{{ ouvrage.imagecouv }}" alt="Illustration de la couverture"></ng-template>
+      <mat-card-content>
+        <p><strong>ISBN</strong> : {{ ouvrage.isbn }}</p>
+        <p class="sujet"><strong>Sujet</strong> : {{ ouvrage.sujet }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button><a href="/homebook/onebook/{{ouvrage.idOuvrage}}">Détail</a></button>
+        <button mat-button><a href="/homebook/modifybook/{{ouvrage.idOuvrage}}">Editer</a></button>
+      </mat-card-actions>
+    </mat-card>
+</div>
