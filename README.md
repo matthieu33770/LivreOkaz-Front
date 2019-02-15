@@ -12,4 +12,4 @@ Sur la liste des ourvrages, nous avons utilisé une boucle ngFor dans le templat
 
 L'ensemble des composants sont reliés par le module app-routing où sont déclarés les différentes routes internes en Angular.
 
-![image](https://github.com/matthieu33770/LivreOkaz/blob/master/src/main/resources/Sch%C3%A9ma%20Angular.JPG)
+![image](https://github.com/matthieu33770/LivreOkaz-Front/blob/master/Sch%C3%A9ma%20Angular.JPG)
